@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Comments Section</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/html/page1.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">Movie Comments</h1>
+        </header>
+        
+        <div class="movie-info">
+            <img src="movie-poster.jpg" alt="Movie Poster" class="movie-poster">
+            <div class="movie-details">
+                <h2>Movie Title</h2>
+                <p>Short description of the movie goes here. A few lines about the plot and highlights.</p>
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <div class="comment-form">
+                <textarea id="comment-input" placeholder="Write your comment..." rows="3"></textarea>
+                <button id="submit-btn">Post Comment</button>
+            </div>
+            <div class="comments-list">
+                <div class="comment user-comment">
+                    <span class="user">John Doe</span>
+                    <p>This movie was amazing! The visuals were stunning.</p>
+                </div>
+                <div class="comment">
+                    <span class="user">Jane Smith</span>
+                    <p>I found the storyline a bit predictable, but still entertaining.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

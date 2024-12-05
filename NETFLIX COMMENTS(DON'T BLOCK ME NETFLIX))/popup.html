@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Movie Comments</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="login-section" class="center">
+        <h2>Login to continue</h2>
+        <!-- Username and Password form -->
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Enter username" required />
+            <input type="password" id="password" placeholder="Enter password" required />
+            <button type="submit" id="login-btn">Login</button>
+        </form>
+        
+        <!-- Error message display -->
+        <div id="error-message" class="hidden">Invalid username or password.</div>
+    </div>
+
+    <div id="redirect-section" class="center hidden">
+        <button id="comments-btn">Go to Comments</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
