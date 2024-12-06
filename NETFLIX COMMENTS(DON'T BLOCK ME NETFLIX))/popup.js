@@ -12,13 +12,24 @@ document.getElementById("login-form").addEventListener("submit", function(event)
             windowurl = tabs[0].url;
             console.log("Active Tab URL:", windowurl);
             payload = {"windowurl":windowurl};
-            console.log(windowurl);
+            const regex = /\/(?:watch|title)\/(\d+)/;
+
+// Extract the ID
+const match = windowurl.match(regex);
+let id = "";
+if (match) {
+    id = match[1];
+    console.log(id); // Output: 81051649
+} else {
+   
+    console.log("No ID found");
+}
             fetch(URI_APP + "/movieinfo", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ websiteurl: windowurl }), // Ensure payload matches the backend expectation
+                body: JSON.stringify({ websiteurl: id }), // Ensure payload matches the backend expectation
             })
                 .then((response) => {
                     if (!response.ok) {

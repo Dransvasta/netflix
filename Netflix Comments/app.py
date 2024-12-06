@@ -65,12 +65,10 @@ def movieinfo():
         payload = request.json
         if not payload or not payload.get("websiteurl"):
             return jsonify({"error": "Missing or invalid website URL"}), 400
-        
-        moviepage = requests.get(payload.get("websiteurl"))
+        moviepage = requests.get("https://www.netflix.com/title/"+payload.get("websiteurl"))
         bsmp = BeautifulSoup(moviepage.text, 'html.parser')
-        
         # Extract title and description
-        movietitle = bsmp.find('div', {'data-uia': 'title-info-title'})
+        movietitle = bsmp.find('h1', {'data-uia': 'title-info-title'})
         moviedescription = bsmp.find('div', {'data-uia': 'title-info-synopsis'})
 
         if movietitle:
